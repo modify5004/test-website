@@ -26,6 +26,12 @@
         .product {
             margin: 10px;
             text-align: center;
+           
+        }
+        .product img {
+            width: 200px; /* Set the desired width */
+            height: 200px; /* Set the desired height */
+            object-fit: cover; /* Ensures the image covers the area without distortion */
         }
         #infoBox {
             position: fixed;
@@ -61,8 +67,8 @@
     <input type="text" id="searchBar" placeholder="Search...">
     <div id="productList">
         <div class="product">
-            <img src="bilder/dlr logo.jpg" alt="Product 1">
-            <button class="moreInfoBtn" onclick="showInfo('bilder/dlr logo.jpg', 'Digital Realty')">More Info</button>
+            <img src="bilder/dlr logo.png" alt="Digital Realty">
+            <button class="moreInfoBtn" onclick="showInfo('bilder/dlr logo.png', 'Digital Realty')">More Info</button>
         </div>
         <div class="product">
             <img src="images/product2.jpg" alt="Product 2">
