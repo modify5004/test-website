@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <input type="text" id="searchBar" placeholder="Search...">
+    <div id="productList">
+        <!-- Example product entry -->
+        <div class="product">
+            <img src="product1.jpg" alt="Product 1">
+            <button class="moreInfoBtn" onclick="showInfo('product1.jpg', 'Product 1 details')">More Info</button>
+        </div>
+        <!-- Add more products here -->
+    </div>
+    <div id="infoBox" class="hidden">
+        <img id="infoImage" src="" alt="Product Image">
+        <p id="infoText"></p>
+        <button id="proofBtn">Proof</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
