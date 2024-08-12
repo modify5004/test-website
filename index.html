@@ -12,6 +12,7 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
+            transition: filter 0.3s;
         }
         #searchBar {
             margin-bottom: 20px;
@@ -28,35 +29,61 @@
             text-align: center;
         }
         #infoBox {
-            margin-top: 20px;
-            text-align: center;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            display: none;
+        }
+        #infoBox img {
+            max-width: 100%;
+        }
+        .hidden {
+            display: none;
+        }
+        .blurred {
+            filter: blur(5px);
         }
     </style>
 </head>
 <body>
     <input type="text" id="searchBar" placeholder="Search...">
     <div id="productList">
-    <div class="product">
-        <img src="bilder/dlr.jpg" alt="Product 1">
-        <button class="moreInfoBtn" onclick="showInfo('bilder/dlr.jpg', 'Digital Realty')">More Info</button>
-    </div>
-    <div class="product">
-        <img src="product2.jpg" alt="Product 2">
-        <button class="moreInfoBtn" onclick="showInfo('product2.jpg', 'Product 2 details')">More Info</button>
-    </div>
-    <div class="product">
-        <img src="product3.jpg" alt="Product 3">
-        <button class="moreInfoBtn" onclick="showInfo('product3.jpg', 'Product 3 details')">More Info</button>
-    </div>
-    <!-- Add more products here -->
-</div>
-
+        <div class="product">
+            <img src="bilder/dlr.jpg" alt="Product 1">
+            <button class="moreInfoBtn" onclick="showInfo('bilder/dlr.jpg', 'Digital Realty')">More Info</button>
+        </div>
+        <div class="product">
+            <img src="images/product2.jpg" alt="Product 2">
+            <button class="moreInfoBtn" onclick="showInfo('images/product2.jpg', 'Product 2 details')">More Info</button>
+        </div>
+        <div class="product">
+            <img src="images/product3.jpg" alt="Product 3">
+            <button class="moreInfoBtn" onclick="showInfo('images/product3.jpg', 'Product 3 details')">More Info</button>
+        </div>
+        <!-- Add more products here -->
     </div>
     <div id="infoBox" class="hidden">
         <img id="infoImage" src="" alt="Product Image">
         <p id="infoText"></p>
-        <button id="proofBtn">Proof</button>
+        <button id="closeBtn">Close</button>
     </div>
-    <script src="script.js"></script>
+    <script>
+        function showInfo(imageSrc, details) {
+            document.getElementById('infoImage').src = imageSrc;
+            document.getElementById('infoText').innerText = details;
+            document.getElementById('infoBox').style.display = 'block';
+            document.body.classList.add('blurred');
+        }
+
+        document.getElementById('closeBtn').addEventListener('click', function() {
+            document.getElementById('infoBox').style.display = 'none';
+            document.body.classList.remove('blurred');
+        });
+    </script>
 </body>
 </html>
