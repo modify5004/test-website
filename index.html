@@ -26,7 +26,6 @@
         .product {
             margin: 10px;
             text-align: center;
-           
         }
         .product img {
             width: 100px; /* Set the desired width */
@@ -78,7 +77,30 @@
             <img src="images/product3.jpg" alt="Product 3">
             <button class="moreInfoBtn" onclick="showInfo('images/product3.jpg', 'Product 3 details')">More Info</button>
         </div>
-        <!-- Add more products here -->
+        <div class="product">
+            <img src="images/product4.jpg" alt="Product 4">
+            <button class="moreInfoBtn" onclick="showInfo('images/product4.jpg', 'Product 4 details')">More Info</button>
+        </div>
+        <div class="product">
+            <img src="images/product5.jpg" alt="Product 5">
+            <button class="moreInfoBtn" onclick="showInfo('images/product5.jpg', 'Product 5 details')">More Info</button>
+        </div>
+        <div class="product">
+            <img src="images/product6.jpg" alt="Product 6">
+            <button class="moreInfoBtn" onclick="showInfo('images/product6.jpg', 'Product 6 details')">More Info</button>
+        </div>
+        <div class="product">
+            <img src="images/product7.jpg" alt="Product 7">
+            <button class="moreInfoBtn" onclick="showInfo('images/product7.jpg', 'Product 7 details')">More Info</button>
+        </div>
+        <div class="product">
+            <img src="images/product8.jpg" alt="Product 8">
+            <button class="moreInfoBtn" onclick="showInfo('images/product8.jpg', 'Product 8 details')">More Info</button>
+        </div>
+        <div class="product">
+            <img src="images/product9.jpg" alt="Product 9">
+            <button class="moreInfoBtn" onclick="showInfo('images/product9.jpg', 'Product 9 details')">More Info</button>
+        </div>
     </div>
     <div id="overlay" class="hidden"></div>
     <div id="infoBox" class="hidden">
@@ -97,6 +119,18 @@
         document.getElementById('closeBtn').addEventListener('click', function() {
             document.getElementById('infoBox').style.display = 'none';
             document.getElementById('overlay').style.display = 'none';
+        });
+                document.getElementById('searchBar').addEventListener('input', function() {
+            const searchValue = this.value.toLowerCase();
+            const products = document.querySelectorAll('.product');
+            products.forEach(product => {
+                const productName = product.querySelector('img').alt.toLowerCase();
+                if (productName.includes(searchValue)) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
         });
     </script>
 </body>
