@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#searchBar {
+    margin: 20px;
+    padding: 10px;
+    width: 80%;
+}
+
+#productList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.product {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#infoBox {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    display: none;
+}
+
+#infoBox img {
+    max-width: 100px;
+    margin-right: 20px;
+}
+
+.hidden {
+    display: none;
+}
